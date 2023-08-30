@@ -1,0 +1,12 @@
+
+All those who are thinking that why creating reverse or opposite direction edges work for 1st question but not for 2nd.
+
+(By opposite direction edges i mean that for a dependency of 0 on 1 i created directed edge from 0->1 instead of 1->0 in adjacency list.)
+
+I tried to solve the question without watching the video, coincidently also did the same thing(made opposite direction edges while creating adjacency list) as striver did in prerequisites task question(1st question) and it worked but when i tried to submit the 2nd question using the same opposite direction adjacency list it gave wrong ans.
+
+Now see dependency order in both questions is same(i.e in both the questions to pick task 0 you have to first finish tasks 1, which is expressed as a pair: [0, 1] ) 
+
+but some how for 1st question creating adjacency list of reverse/opposite direction works because in first question we just need to check whether there is any cyclic dependency in courses or not. So even if we create reverse direction edges for the graph, cycle would still exist so that's why its giving correct ans.
+
+But for 2nd question if we create opposite direction edges in graph(i.e. opposite dependency) our topological sort would also be created in reverse order of what it should actually should be and that's why it does n't work for 2nd question. It can work even if we create opposite direction edges but then we would need to reverse our topological sort array just before returning it.
